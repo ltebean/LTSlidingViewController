@@ -11,7 +11,7 @@
 
 @implementation LTSlidingViewZoomTransition
 
--(void) updateSourceView:(UIView*) sourceView destinationView:(UIView*) destView withPercent:(CGFloat)percent
+-(void) updateSourceView:(UIView*) sourceView destinationView:(UIView*) destView withPercent:(CGFloat)percent direction:(SlideDirection)direction
 {
     if(destView){
         CGFloat destViewZoom = zoom+(1-zoom)*percent;

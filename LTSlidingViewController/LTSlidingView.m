@@ -7,7 +7,6 @@
 //
 
 #import "LTSlidingView.h"
-#import "LTSlidingViewZoomTransition.h"
 
 @interface LTSlidingView()<UIScrollViewDelegate>
 @property(nonatomic,strong) NSMutableArray* views;
@@ -41,7 +40,6 @@
 -(void) setup
 {
     self.views = [NSMutableArray array];
-    self.animator = [[LTSlidingViewZoomTransition alloc]init];
 }
 
 -(UIScrollView*) scrollView
@@ -73,7 +71,6 @@
 
     CGFloat percent = MIN(1,fabs((offset - self.beginOffset)/pageWidth));
     
-    
     UIView* sourceView =self.views[self.currentIndex];
     UIView* destView;
     
@@ -81,7 +78,11 @@
     if(nextIndex>=0 && nextIndex<self.views.count){
         destView = self.views[nextIndex];
     }
-    [self.animator updateSourceView:sourceView destinationView:destView withPercent:percent];
+    
+    SlideDirection direction = (offset - self.beginOffset>0)?right:left;
+    if(self.animator){
+        [self.animator updateSourceView:sourceView destinationView:destView withPercent:percent direction:direction];
+    }
 }
 
 -(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView

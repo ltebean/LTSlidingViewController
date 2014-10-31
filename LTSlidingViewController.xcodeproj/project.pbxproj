@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49BB6C741A03C5FC00D6C39B /* LTSlidingViewZoomTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BB6C731A03C5FC00D6C39B /* LTSlidingViewZoomTransition.m */; };
+		49BB6C771A03C81E00D6C39B /* LTSlidingViewCoverflowTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 49BB6C761A03C81E00D6C39B /* LTSlidingViewCoverflowTransition.m */; };
 		FA311C741A037522005AB9C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA311C731A037522005AB9C7 /* main.m */; };
 		FA311C771A037522005AB9C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA311C761A037522005AB9C7 /* AppDelegate.m */; };
 		FA311C7A1A037522005AB9C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA311C791A037522005AB9C7 /* ViewController.m */; };
@@ -32,6 +33,8 @@
 /* Begin PBXFileReference section */
 		49BB6C721A03C5FC00D6C39B /* LTSlidingViewZoomTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSlidingViewZoomTransition.h; sourceTree = "<group>"; };
 		49BB6C731A03C5FC00D6C39B /* LTSlidingViewZoomTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSlidingViewZoomTransition.m; sourceTree = "<group>"; };
+		49BB6C751A03C81E00D6C39B /* LTSlidingViewCoverflowTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSlidingViewCoverflowTransition.h; sourceTree = "<group>"; };
+		49BB6C761A03C81E00D6C39B /* LTSlidingViewCoverflowTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSlidingViewCoverflowTransition.m; sourceTree = "<group>"; };
 		FA311C6E1A037522005AB9C7 /* LTSlidingViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTSlidingViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA311C721A037522005AB9C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA311C731A037522005AB9C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 			children = (
 				49BB6C721A03C5FC00D6C39B /* LTSlidingViewZoomTransition.h */,
 				49BB6C731A03C5FC00D6C39B /* LTSlidingViewZoomTransition.m */,
+				49BB6C751A03C81E00D6C39B /* LTSlidingViewCoverflowTransition.h */,
+				49BB6C761A03C81E00D6C39B /* LTSlidingViewCoverflowTransition.m */,
 			);
 			name = transition;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49BB6C771A03C81E00D6C39B /* LTSlidingViewCoverflowTransition.m in Sources */,
 				FA311C9B1A037545005AB9C7 /* LTSlidingView.m in Sources */,
 				49BB6C741A03C5FC00D6C39B /* LTSlidingViewZoomTransition.m in Sources */,
 				FA311C9C1A037545005AB9C7 /* LTSlidingViewController.m in Sources */,
