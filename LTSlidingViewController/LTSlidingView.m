@@ -7,7 +7,7 @@
 //
 
 #import "LTSlidingView.h"
-#define zoom 0.88
+#import "LTSlidingViewZoomTransition.h"
 
 @interface LTSlidingView()<UIScrollViewDelegate>
 @property(nonatomic,strong) NSMutableArray* views;
@@ -41,8 +41,7 @@
 -(void) setup
 {
     self.views = [NSMutableArray array];
-    
-
+    self.animator = [[LTSlidingViewZoomTransition alloc]init];
 }
 
 -(UIScrollView*) scrollView
@@ -74,17 +73,15 @@
 
     CGFloat percent = MIN(1,fabs((offset - self.beginOffset)/pageWidth));
     
+    
+    UIView* sourceView =self.views[self.currentIndex];
+    UIView* destView;
+    
     int nextIndex = (offset - self.beginOffset)>0? self.currentIndex+1 :self.currentIndex-1;
     if(nextIndex>=0 && nextIndex<self.views.count){
-        UIView* nextView = self.views[nextIndex];
-        CGFloat nextViewZoom = zoom+(1-zoom)*percent;
-        nextView.transform=CGAffineTransformMakeScale(nextViewZoom, nextViewZoom);
+        destView = self.views[nextIndex];
     }
-    
-    UIView *currentView = self.views[self.currentIndex];
-    CGFloat currentViewZoom =1-(1-zoom)*percent;
-    currentView.transform=CGAffineTransformMakeScale(currentViewZoom, currentViewZoom);
-   
+    [self.animator updateSourceView:sourceView destinationView:destView withPercent:percent];
 }
 
 -(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView
@@ -94,13 +91,9 @@
     CGFloat pageWidth = self.scrollView.frame.size.width;
     CGFloat offset = self.scrollView.contentOffset.x;
     self.currentIndex = floor((offset - pageWidth / self.views.count) / pageWidth) + 1;
-    for (int i = 0; i<self.views.count; i++) {
-        if(i!=self.currentIndex){
-            UIView * view = self.views[i];
-            view.transform = CGAffineTransformMakeScale(zoom, zoom);
-        }
-    }
-   
+    
 }
+
+
 
 @end

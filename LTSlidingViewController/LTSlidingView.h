@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LTSlidingView : UIView
--(void) addView:(UIView*) view;
+@protocol LTSlidingViewTransition <NSObject>
+-(void) updateSourceView:(UIView*) sourceView destinationView:(UIView*) destView withPercent:(CGFloat)percent;
+@end
 
+@interface LTSlidingView : UIView
+@property(nonatomic,strong) id<LTSlidingViewTransition> animator;
+-(void) addView:(UIView*) view;
 @end
