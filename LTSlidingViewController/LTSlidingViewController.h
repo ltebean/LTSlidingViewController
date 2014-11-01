@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LTSlidingView.h"
 
 @interface LTSlidingViewController : UIViewController
+@property(nonatomic,strong) id<LTSlidingViewTransition> animator;
 
 @end

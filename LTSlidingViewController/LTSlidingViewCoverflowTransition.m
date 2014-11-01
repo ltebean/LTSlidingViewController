@@ -8,13 +8,13 @@
 
 #import "LTSlidingViewCoverflowTransition.h"
 #define finalAngel 30.0f
-#define perspective 1.0/-500
+#define perspective 1.0/-600
 @implementation LTSlidingViewCoverflowTransition
 
 -(void) updateSourceView:(UIView*) sourceView destinationView:(UIView*) destView withPercent:(CGFloat)percent direction:(SlideDirection)direction
 {
     CATransform3D transform = CATransform3DIdentity;
-    transform.m34 = 1.0 / -500;
+    transform.m34 = perspective;
     
     CGFloat angle =  finalAngel * M_PI / 180.0f*percent;
     if(direction == left){

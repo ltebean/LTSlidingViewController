@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "LTSlidingViewCoverflowTransition.h"
+#import "LTSlidingViewZoomTransition.h"
 
 @interface ViewController ()
 
@@ -18,15 +20,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.animator = [[LTSlidingViewCoverflowTransition alloc]init];
+
+
     UIViewController *vc1 = [self.storyboard instantiateViewControllerWithIdentifier:@"vc"];
-    
     UIViewController *vc2 = [self.storyboard instantiateViewControllerWithIdentifier:@"vc"];
-    
     UIViewController *vc3 = [self.storyboard instantiateViewControllerWithIdentifier:@"vc"];
     
     [self addChildViewController:vc1];
     [self addChildViewController:vc2];
     [self addChildViewController:vc3];
+    
+
 
 }
 

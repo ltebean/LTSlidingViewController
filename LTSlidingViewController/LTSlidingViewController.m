@@ -7,9 +7,6 @@
 //
 
 #import "LTSlidingViewController.h"
-#import "LTSlidingView.h"
-#import "LTSlidingViewZoomTransition.h"
-#import "LTSlidingViewCoverflowTransition.h"
 
 @interface LTSlidingViewController ()
 @property(nonatomic,strong) LTSlidingView* slidingView;
@@ -28,7 +25,7 @@
 {
     if(!_slidingView){
         _slidingView = [[LTSlidingView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
-        _slidingView.animator = [[LTSlidingViewCoverflowTransition alloc]init];
+        _slidingView.animator = self.animator;
         [self.view addSubview:_slidingView];
     }
     return _slidingView;
