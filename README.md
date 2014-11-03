@@ -1,6 +1,6 @@
-![LTSlidingViewController](https://raw.githubusercontent.com/ltebean/LTSlidingViewController/master/demo/zoom.gif)
+![LTSlidingViewController](https://raw.githubusercontent.com/ltebean/LTSlidingViewController/master/image/zoom.gif)
 
-![LTSlidingViewController](https://raw.githubusercontent.com/ltebean/LTSlidingViewController/master/demo/coverflow.gif)
+![LTSlidingViewController](https://raw.githubusercontent.com/ltebean/LTSlidingViewController/master/image/coverflow.gif)
 
 ## Usage
 

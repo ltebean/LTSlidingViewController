@@ -30,10 +30,10 @@
     [self addChildViewController:vc1];
     [self addChildViewController:vc2];
     [self addChildViewController:vc3];
-    
-
 
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

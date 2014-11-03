@@ -9,6 +9,8 @@
 #import "LTSlidingViewCoverflowTransition.h"
 #define finalAngel 30.0f
 #define perspective 1.0/-600
+#define finalAlpha 0.6f
+
 @implementation LTSlidingViewCoverflowTransition
 
 -(void) updateSourceView:(UIView*) sourceView destinationView:(UIView*) destView withPercent:(CGFloat)percent direction:(SlideDirection)direction
@@ -22,6 +24,7 @@
     }
     transform = CATransform3DRotate(transform, angle , 0.0f, 1.0f, 0.0f);
     sourceView.layer.transform = transform;
+    sourceView.alpha =  1 - percent*(1-finalAlpha);
     
     if(destView){
         CATransform3D transform = CATransform3DIdentity;
@@ -32,6 +35,7 @@
         }
         transform = CATransform3DRotate(transform, angle , 0.0f, 1.0f, 0.0f);
         destView.layer.transform = transform;
+        destView.alpha = finalAlpha + (1-finalAlpha)*percent;
     }
     
 }
