@@ -16,7 +16,6 @@
 		FA311C7F1A037522005AB9C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA311C7E1A037522005AB9C7 /* Images.xcassets */; };
 		FA311C821A037522005AB9C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA311C801A037522005AB9C7 /* LaunchScreen.xib */; };
 		FA311C8E1A037523005AB9C7 /* LTSlidingViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA311C8D1A037523005AB9C7 /* LTSlidingViewControllerTests.m */; };
-		FA311C9B1A037545005AB9C7 /* LTSlidingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA311C981A037545005AB9C7 /* LTSlidingView.m */; };
 		FA311C9C1A037545005AB9C7 /* LTSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA311C9A1A037545005AB9C7 /* LTSlidingViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +47,6 @@
 		FA311C871A037522005AB9C7 /* LTSlidingViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTSlidingViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA311C8C1A037523005AB9C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA311C8D1A037523005AB9C7 /* LTSlidingViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTSlidingViewControllerTests.m; sourceTree = "<group>"; };
-		FA311C971A037545005AB9C7 /* LTSlidingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSlidingView.h; sourceTree = "<group>"; };
-		FA311C981A037545005AB9C7 /* LTSlidingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSlidingView.m; sourceTree = "<group>"; };
 		FA311C991A037545005AB9C7 /* LTSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSlidingViewController.h; sourceTree = "<group>"; };
 		FA311C9A1A037545005AB9C7 /* LTSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSlidingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,8 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				49BB6C711A03C21D00D6C39B /* transition */,
-				FA311C971A037545005AB9C7 /* LTSlidingView.h */,
-				FA311C981A037545005AB9C7 /* LTSlidingView.m */,
 				FA311C991A037545005AB9C7 /* LTSlidingViewController.h */,
 				FA311C9A1A037545005AB9C7 /* LTSlidingViewController.m */,
 			);
@@ -257,7 +252,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49BB6C771A03C81E00D6C39B /* LTSlidingViewCoverflowTransition.m in Sources */,
-				FA311C9B1A037545005AB9C7 /* LTSlidingView.m in Sources */,
 				49BB6C741A03C5FC00D6C39B /* LTSlidingViewZoomTransition.m in Sources */,
 				FA311C9C1A037545005AB9C7 /* LTSlidingViewController.m in Sources */,
 				FA311C7A1A037522005AB9C7 /* ViewController.m in Sources */,

@@ -12,16 +12,16 @@
 
 @implementation LTSlidingViewZoomTransition
 
--(void) updateSourceView:(UIView*) sourceView destinationView:(UIView*) destView withPercent:(CGFloat)percent direction:(SlideDirection)direction
+- (void)updateSourceView:(UIView *) sourceView destinationView:(UIView *) destView withProgress:(CGFloat)progress direction:(SlideDirection)direction
 {
-    CGFloat sourceViewZoom =1-(1-zoom)*percent;
+    CGFloat sourceViewZoom =1-(1-zoom)*progress;
     sourceView.transform=CGAffineTransformMakeScale(sourceViewZoom, sourceViewZoom);
-    sourceView.alpha =  1 - percent*(1-finalAlpha);
+    sourceView.alpha =  1 - progress*(1-finalAlpha);
     
     if(destView){
-        CGFloat destViewZoom = zoom+(1-zoom)*percent;
+        CGFloat destViewZoom = zoom+(1-zoom)*progress;
         destView.transform=CGAffineTransformMakeScale(destViewZoom, destViewZoom);
-        destView.alpha = finalAlpha + (1-finalAlpha)*percent;
+        destView.alpha = finalAlpha + (1-finalAlpha)*progress;
     }
 }
 @end

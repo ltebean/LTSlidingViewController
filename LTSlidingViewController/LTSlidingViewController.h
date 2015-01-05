@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LTSlidingView.h"
+
+typedef NS_ENUM(NSInteger, SlideDirection) {
+    left,
+    right
+};
+
+@protocol LTSlidingViewTransition <NSObject>
+- (void)updateSourceView:(UIView *) sourceView destinationView:(UIView *) destView withProgress:(CGFloat)progress direction:(SlideDirection)direction;
+@end
 
 @interface LTSlidingViewController : UIViewController
 @property(nonatomic,strong) id<LTSlidingViewTransition> animator;
-
+- (void)scrollToPage:(int)page;
+- (void)removeAllChildViewControllers;
+- (void)didScrollToPage:(int)page;
 @end

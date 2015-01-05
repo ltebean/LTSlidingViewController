@@ -13,29 +13,29 @@
 
 @implementation LTSlidingViewCoverflowTransition
 
--(void) updateSourceView:(UIView*) sourceView destinationView:(UIView*) destView withPercent:(CGFloat)percent direction:(SlideDirection)direction
+- (void)updateSourceView:(UIView *) sourceView destinationView:(UIView *) destView withProgress:(CGFloat)progress direction:(SlideDirection)direction
 {
     CATransform3D transform = CATransform3DIdentity;
     transform.m34 = perspective;
     
-    CGFloat angle =  finalAngel * M_PI / 180.0f*percent;
+    CGFloat angle =  finalAngel * M_PI / 180.0f * progress;
     if(direction == left){
         angle = -angle;
     }
     transform = CATransform3DRotate(transform, angle , 0.0f, 1.0f, 0.0f);
     sourceView.layer.transform = transform;
-    sourceView.alpha =  1 - percent*(1-finalAlpha);
+    sourceView.alpha =  1 - progress*(1-finalAlpha);
     
     if(destView){
         CATransform3D transform = CATransform3DIdentity;
         transform.m34 = perspective;
-        CGFloat angle =  - finalAngel * M_PI / 180.0f * (1-percent);
+        CGFloat angle =  - finalAngel * M_PI / 180.0f * (1-progress);
         if(direction == left){
             angle = -angle;
         }
         transform = CATransform3DRotate(transform, angle , 0.0f, 1.0f, 0.0f);
         destView.layer.transform = transform;
-        destView.alpha = finalAlpha + (1-finalAlpha)*percent;
+        destView.alpha = finalAlpha + (1-finalAlpha)*progress;
     }
     
 }

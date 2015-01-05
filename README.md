@@ -18,11 +18,19 @@ UIViewController *vc3 = [self.storyboard instantiateViewControllerWithIdentifier
 [self addChildViewController:vc3];
 ```
 
+Some useful methods you can call in your controller:
+
+```objective-c
+- (void)scrollToPage:(int)page;
+- (void)removeAllChildViewControllers;
+- (void)didScrollToPage:(int)page;
+```
+
 And you can create custom transition by implementing LTSlidingViewTransition protocal:
 
 ```objective-c
 @protocol LTSlidingViewTransition <NSObject>
--(void) updateSourceView:(UIView*) sourceView destinationView:(UIView*) destView withPercent:(CGFloat)percent direction:(SlideDirection)direction;
+- (void)updateSourceView:(UIView *) sourceView destinationView:(UIView *) destView withProgress:(CGFloat)progress direction:(SlideDirection)direction;
 @end
 ```
 

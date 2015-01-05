@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LTSlidingView.h"
+#import "LTSlidingViewController.h"
 
 @interface LTSlidingViewCoverflowTransition : NSObject <LTSlidingViewTransition>
 @end
