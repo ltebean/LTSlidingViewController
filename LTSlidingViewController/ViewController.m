@@ -20,8 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.animator = [[LTSlidingViewCoverflowTransition alloc]init];
-
+    self.animator = [LTSlidingViewCoverflowTransition new];
+//    self.animator = [LTSlidingViewZoomTransition new];
 
     UIViewController *vc1 = [self.storyboard instantiateViewControllerWithIdentifier:@"vc"];
     UIViewController *vc2 = [self.storyboard instantiateViewControllerWithIdentifier:@"vc"];
@@ -33,11 +33,10 @@
 
 }
 
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)didScrollToPage:(NSInteger)page
+{
+    NSLog(@"did scroll to page:%ld", (long)page);
 }
+
 
 @end

@@ -1,25 +1,24 @@
 //
-//  LTSlidingContainerViewController.h
-//  PageViewControllerTest
+//  LTSlidingViewController.h
 //
 //  Created by ltebean on 14/10/31.
-//  Copyright (c) 2014年 ltebean. All rights reserved.
+//  Copyright (c) 2014 ltebean. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, SlideDirection) {
-    left,
-    right
+    SlideDirectionLeft,
+    SlideDirectionRight
 };
 
 @protocol LTSlidingViewTransition <NSObject>
-- (void)updateSourceView:(UIView *) sourceView destinationView:(UIView *) destView withProgress:(CGFloat)progress direction:(SlideDirection)direction;
+- (void)updateSourceView:(UIView *)sourceView destinationView:(UIView *)destView withProgress:(CGFloat)progress direction:(SlideDirection)direction;
 @end
 
 @interface LTSlidingViewController : UIViewController
 @property(nonatomic,strong) id<LTSlidingViewTransition> animator;
-- (void)scrollToPage:(int)page;
+- (void)scrollToPage:(NSInteger)page animated:(BOOL)animated;
 - (void)removeAllChildViewControllers;
-- (void)didScrollToPage:(int)page;
+- (void)didScrollToPage:(NSInteger)page;
 @end

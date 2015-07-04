@@ -1,3 +1,6 @@
+![LTSlidingViewController](https://cocoapod-badges.herokuapp.com/v/LTSlidingViewController/badge.png)
+
+## Demo
 ![LTSlidingViewController](https://raw.githubusercontent.com/ltebean/LTSlidingViewController/master/image/zoom.gif)
 
 ![LTSlidingViewController](https://raw.githubusercontent.com/ltebean/LTSlidingViewController/master/image/coverflow.gif)
@@ -18,12 +21,13 @@ UIViewController *vc3 = [self.storyboard instantiateViewControllerWithIdentifier
 [self addChildViewController:vc3];
 ```
 
-Some useful methods you can call in your controller:
+Some useful methods you can call in your subclass controller:
 
 ```objective-c
-- (void)scrollToPage:(int)page;
+- (void)scrollToPage:(NSInteger)page animated:(BOOL)animated;
 - (void)removeAllChildViewControllers;
-- (void)didScrollToPage:(int)page;
+- (void)didScrollToPage:(NSInteger)page;
+@end
 ```
 
 And you can create custom transition by implementing LTSlidingViewTransition protocal:

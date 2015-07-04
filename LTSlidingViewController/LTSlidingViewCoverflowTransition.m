@@ -19,7 +19,7 @@
     transform.m34 = perspective;
     
     CGFloat angle =  finalAngel * M_PI / 180.0f * progress;
-    if(direction == left){
+    if(direction == SlideDirectionLeft){
         angle = -angle;
     }
     transform = CATransform3DRotate(transform, angle , 0.0f, 1.0f, 0.0f);
@@ -30,7 +30,7 @@
         CATransform3D transform = CATransform3DIdentity;
         transform.m34 = perspective;
         CGFloat angle =  - finalAngel * M_PI / 180.0f * (1-progress);
-        if(direction == left){
+        if(direction == SlideDirectionLeft){
             angle = -angle;
         }
         transform = CATransform3DRotate(transform, angle , 0.0f, 1.0f, 0.0f);
