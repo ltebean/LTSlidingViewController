@@ -10,7 +10,7 @@
 Make your view controller extend LTSlidingViewController, in viewDidLoad:
 
 ```objective-c
-self.animator = [[LTSlidingViewCoverflowTransition alloc]init]; // set the animator
+self.animator = [[LTSlidingViewCoverflowTransition alloc] init]; // set the animator
 
 UIViewController *vc1 = [self.storyboard instantiateViewControllerWithIdentifier:@"vc"];
 UIViewController *vc2 = [self.storyboard instantiateViewControllerWithIdentifier:@"vc"];
@@ -34,7 +34,7 @@ And you can create custom transition by implementing LTSlidingViewTransition pro
 
 ```objective-c
 @protocol LTSlidingViewTransition <NSObject>
-- (void)updateSourceView:(UIView *) sourceView destinationView:(UIView *) destView withProgress:(CGFloat)progress direction:(SlideDirection)direction;
+- (void)updateSourceView:(UIView *)sourceView destinationView:(UIView *)destView withProgress:(CGFloat)progress direction:(SlideDirection)direction;
 @end
 ```
 
