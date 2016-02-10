@@ -12,12 +12,12 @@ typedef NS_ENUM(NSInteger, SlideDirection) {
     SlideDirectionRight
 };
 
-@protocol LTSlidingViewTransition <NSObject>
+@protocol LTSlidingViewTransition<NSObject>
 - (void)updateSourceView:(UIView *)sourceView destinationView:(UIView *)destView withProgress:(CGFloat)progress direction:(SlideDirection)direction;
 @end
 
-@interface LTSlidingViewController : UIViewController
-@property(nonatomic,strong) id<LTSlidingViewTransition> animator;
+@interface LTSlidingViewController: UIViewController
+@property(nonatomic,strong) id<LTSlidingViewTransition>animator;
 - (void)scrollToPage:(NSInteger)page animated:(BOOL)animated;
 - (void)removeAllChildViewControllers;
 - (void)didScrollToPage:(NSInteger)page;
